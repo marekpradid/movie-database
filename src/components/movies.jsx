@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef} from "react";
 import './movies.scss';
 import {Pagination} from "./common/pagination";
 import {PaginationStep} from "../utils/paginationSteps";
