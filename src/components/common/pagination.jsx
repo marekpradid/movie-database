@@ -13,24 +13,25 @@ export function Pagination(props) {
     return (
         pagesCount === 1 ? null :
             (<nav>
-            <ul className="pagination">
-                <li key="previousPage"
-                    className={(PAGINATION_STEP.PREVIOUS_STEP === currentPage) ? "page-item active pointer-event cursor-pointer" : "page-item cursor-pointer"}>
-                    <a className="page-link" onClick={() => onPageChange(PAGINATION_STEP.PREVIOUS_STEP)}>Previous</a>
-                </li>
-                {
-                    pages.map(page =>
-                        <li key={page}
-                            className={page === currentPage ? "page-item active cursor-pointer" : "page-item cursor-pointer"}>
-                            <a className="page-link" onClick={() => onPageChange(page)}>{page}</a>
-                        </li>
-                    )
-                }
-                <li key="nextPage"
-                    className={(PAGINATION_STEP.NEXT_STEP === currentPage) ? "page-item active cursor-pointer" : "page-item cursor-pointer"}>
-                    <a className="page-link" onClick={() => onPageChange(PAGINATION_STEP.NEXT_STEP)}>Next</a>
-                </li>
-            </ul>
-        </nav>)
+                <ul className="pagination">
+                    <li key="previousPage"
+                        className="page-item pointer-event cursor-pointer">
+                        <a className="page-link"
+                           onClick={() => onPageChange(PAGINATION_STEP.PREVIOUS_STEP)}>Previous</a>
+                    </li>
+                    {
+                        pages.map(page =>
+                            <li key={page}
+                                className={page === currentPage ? "page-item active cursor-pointer" : "page-item cursor-pointer"}>
+                                <a className="page-link" onClick={() => onPageChange(page)}>{page}</a>
+                            </li>
+                        )
+                    }
+                    <li key="nextPage"
+                        className="page-item pointer-event cursor-pointer">
+                        <a className="page-link" onClick={() => onPageChange(PAGINATION_STEP.NEXT_STEP)}>Next</a>
+                    </li>
+                </ul>
+            </nav>)
     )
 }

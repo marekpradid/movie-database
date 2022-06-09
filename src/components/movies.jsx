@@ -69,12 +69,13 @@ export function Movies() {
 
     return (
         <div className="search-container">
-            <SearchInput inputElementRef={inputElementRef} onSearchClick={onSearchClick} onFavouriteMoviesClick={onFavouriteMoviesClick}></SearchInput>
+            <SearchInput inputElementRef={inputElementRef} onSearchClick={onSearchClick}
+                         onFavouriteMoviesClick={onFavouriteMoviesClick}></SearchInput>
             <h3 style={{marginTop: '2rem', paddingLeft: '0.5rem', color: 'red'}}>{errorSearch}</h3>
 
             {!errorSearch && isSearchPressed && movies.length > 0 &&
                 <div>
-                    <h3 style={{marginTop: '2rem'}}> Found {totalResults} by searched title {searchTitle}</h3>
+                    <h3 style={{marginTop: '2rem'}}> Found {totalResults} by searched title <b>{searchTitle}</b></h3>
                     <MoviesTable paginatedMovies={movies} onMovieClick={onMovieClick}></MoviesTable>
                     <Pagination
                         items={totalResults}

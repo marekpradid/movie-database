@@ -4,7 +4,7 @@ export function SearchInput(props) {
     const {inputElementRef, onSearchClick, onFavouriteMoviesClick} = props;
 
     function keyPress(event) {
-        if(event.key === "Enter"){
+        if (event.key === "Enter") {
             onSearchClick(inputElementRef.current?.value);
         }
     }
@@ -17,8 +17,10 @@ export function SearchInput(props) {
             <button className="btn btn-outline-secondary" type="button" id="button-addon2"
                     onClick={() => onSearchClick(inputElementRef.current?.value)}>Search
             </button>
-            <button type="button" className="btn btn-danger" style={{position: 'absolute',right: '-50%', borderRadius: '10px 100px / 120px'}}
-            onClick={() => onFavouriteMoviesClick()}>To Favourites</button>
+            <button type="button" className="btn btn-danger"
+                    style={{position: 'absolute', right: '-50%', borderRadius: '10px 100px / 120px'}}
+                    onClick={() => onFavouriteMoviesClick()}>To Favourites
+            </button>
         </div>
     );
 }

@@ -41,7 +41,7 @@ export const fetchMovieDetails = (id) => async (dispatch) => {
         const data = await clientService.getMovieDetails(id);
 
         if (data.Response === "False") {
-           dispatch({type: actionTypes.FETCH_MOVIE_DETAILS_ERROR, data});
+            dispatch({type: actionTypes.FETCH_MOVIE_DETAILS_ERROR, data});
             return;
         }
 
